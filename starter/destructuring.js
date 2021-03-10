@@ -109,7 +109,7 @@ console.log(i, j, k); //out puts 1,3,4
 
 //Default values
 
-//const [p, q, r] = [8, 9]; //we are diestructuring the element of the array and assined to variables of p,q,r  but we short one element unassined which is r assined to undefined
+//const [p, q, r] = [8, 9]; //we are diestructuring the element of the array and assined to variables of p,q,r  but we short one element unassgined which is r assgined to undefined
 //console.log(p, q, r); //8 9 undefined
 
 //so to prevent the variable from becouming undefined  we need to assing a default number to the variable like the eg below
@@ -121,7 +121,7 @@ console.log(p, q, r); //8 9 1
 
 //object destructuring
 
-// in object destructuring position of the property of the object dosent matter
+// in object destructuring position of the property of the object dosn't matter
 //the order of elements does not matter, we don't need to manually skip elements like we did in an array.
 const { name, openingHours, categories } = restaurant; // destrucuring object.. in this case we use curly braces becouse it is objects
 //we assigned the property to the values
@@ -147,7 +147,7 @@ console.log(newName, newOpeningHours, newCategories); //it gives as the same res
 
 ////////// default values
 // what if we are traying read or accesing the property that is not exist in our object data,  usually we get  "undefined"
-//For example if we were trying to say restaurant.menu, this would be undefined  because there is no property called menu.We have starterMenu and mainMenu, but not  menu.
+//For example if we were trying to say restaurant.menu, this would be undefined  because there is no property called menu. We have starterMenu and mainMenu, but not  menu.
 // so to fix it we can set default values   see eg below
 
 /*-So let's say that we are trying to destructuring the menu. And so we use equal to set a default value, all right?
@@ -164,7 +164,7 @@ And so therefore this default value will not apply to starterMenu,but it should 
 const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters); //Array []  Array(4) [ "Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad" ]
 
-//what if we didnt applay default value for the menu property lets see what would be the result
+//what if we didnt apply default value for the menu property lets see what would be the result
 
 /*const { menu, starterMenu: starters } = restaurant;
 console.log(menu, starters); //outputs undefined Array(4) [ "Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad" ] */
