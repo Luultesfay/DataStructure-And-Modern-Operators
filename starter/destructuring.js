@@ -39,6 +39,11 @@ const restaurant = {
       `here is your delicious pasta making using ${ing1}, ${ing2}, ${ing3},`
     );
   },
+  orderPizza: function (mainIngradient, ...otherIngradent) {
+    // ...otherIngradent  this is rest syntax
+    console.log(mainIngradient);
+    console.log(otherIngradent);
+  },
 };
 
 // array destructuring
