@@ -34,6 +34,11 @@ const restaurant = {
       close: 24,
     },
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `here is your delicious pasta making using ${ing1}, ${ing2}, ${ing3},`
+    );
+  },
 };
 
 // array destructuring
