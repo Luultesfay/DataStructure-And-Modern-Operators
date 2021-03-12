@@ -28,7 +28,7 @@ console.log(undefined || 0 || 'hello' || 23 || null); //hello
 
 /*And now let's see a more practical application of this. So let's say that there might be a property
 on the restaurant object with the number of guests. So something like this:
-Restaurant dot num guests, but again, we don't know if it exists.
+Restaurant.numGuests, but again, we don't know if it exists.
 However, we want to basically define a variable based on this number of guests.
 And we want to set a default value if this doesn't exist.*/
 
@@ -44,7 +44,7 @@ console.log(guests2); // outputs 10   becouse  restaurant.numGests is  udefined 
 console.log('---AND---');
 // &&  this short cercuit works opposit way of OR || operator
 //if the first value is falsey value it imedately return that value , then exit that operation without evalute the second value
-
+// but if the first value is true then the 2nd value is evaluted then if it is true  continues to check all the truthy value and retuyrn the last truly value, but if it found falsey value among those truly valu it return the falsey value
 console.log(0 && 'jonas'); //0  is falsey value and exits
 console.log(7 && 'jonas'); // it outputs 'jonas'   becouse  when it is truthy, it means that the evaluation continues and then simply the last value is returned.
 //in the above code both 7 and jonas is truthy value so 7 is evalute then ture then jonas evaluate true then jonas is the last turthy value to return
@@ -69,7 +69,7 @@ restaurant.numGests = 0;
 const gests3 = restaurant.numGests || 10;
 console.log(gests3); // it out puts 10  becouse 0 is falsey value and the operator checks the secound value 10 then turthy it returns that ten
 
-// but the obove code returned us the number 10 that we didnt want becouse we have 0 guests in our restaurant so nuulish operator (??) came to our rescue
+// but the obove code returned us with  10 guests that we didnt want becouse we have 0 guests in our restaurant so nuulish operator (??) came to our rescue
 //nullish: null and undefined (not 0 or '')
 const guestCorrect = restaurant.numGests ?? 10; // we use nullish ??
 console.log(guestCorrect); //this outputs us  0
@@ -132,7 +132,7 @@ const game = {
 
 //1,creating destructure player   to variable player1 and player2
 //Create one player array for each team (variables 'players1' and 'players2)
-const [player1, player2] = game.players;
+const [player1, player2] = game.players; //  we are destructuring here
 console.log(player1, player2);
 //out puts
 /*Array(11) [ "Neuer", "Pavard", "Martinez", "Alaba", "Davies", "Kimmich", "Goretzka", "Coman", "Muller", "Gnarby", … ]
@@ -144,14 +144,16 @@ Array(11) [ "Burki", "Schulz", "Hummels", "Akanji", "Hakimi", "Weigl", "Witsel",
 //goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10
 //field players
 
-const [gk, ...fieldPlayers] = game.players[0]; //or game.player1
+const [gk, ...fieldPlayers] = game.players[0]; //or game.player1                  //in this we use REST to pack the rest players
 console.log(gk, fieldPlayers);
 //outputs
 
-/*Array(10) [ "Pavard", "Martinez", "Alaba", "Davies", "Kimmich", "Goretzka", "Coman", "Muller", "Gnarby", "Lewandowski" ] */
+/*
+Neuer
+Array(10) [ "Pavard", "Martinez", "Alaba", "Davies", "Kimmich", "Goretzka", "Coman", "Muller", "Gnarby", "Lewandowski" ] */
 
 //3. Create an array 'allPlayers' containing all players of both teams (22 players)
-
+//in this we are combinig both team players using Spread operator
 const allPlayers = [...game.players[0], ...game.players[1]]; //or  [...game.players1, ...game.players2]
 console.log(allPlayers);
 //outputs  all the 22 players
