@@ -276,4 +276,4 @@ weather.getWeather({ cityIndex: 2, highWindex: 1, lowWindex: 0 }); //nairobi hig
 weather.getWeather({ cityIndex: 0, highWindex: 0 }); //Asmara highest weather today is 40 degree celc and lowest is 12 degree celc   we dont have lowest weather but we take  the default  then 12
 
 //note : the name in the function should be the same as the name passing object eg
-//  this is in calling({ cityIndex: 2, highWindex: 1, lowWindex: 0 })== this is infunction({ cityIndex ,highWindex ,lowWindex }); i mean only the arguemnt
+//  this is in calling and passing argments ({ cityIndex: 2, highWindex: 1, lowWindex: 0 })== this is in function({ cityIndex ,highWindex ,lowWindex }); i mean only the arguemnt
