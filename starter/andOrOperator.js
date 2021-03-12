@@ -144,7 +144,7 @@ Array(11) [ "Burki", "Schulz", "Hummels", "Akanji", "Hakimi", "Weigl", "Witsel",
 //goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10
 //field players
 
-const [gk, ...fieldPlayers] = game.players[0];
+const [gk, ...fieldPlayers] = game.players[0]; //or game.player1
 console.log(gk, fieldPlayers);
 //outputs
 
@@ -152,7 +152,7 @@ console.log(gk, fieldPlayers);
 
 //3. Create an array 'allPlayers' containing all players of both teams (22 players)
 
-const allPlayers = [...game.players[0], ...game.players[1]];
+const allPlayers = [...game.players[0], ...game.players[1]]; //or  [...game.players1, ...game.players2]
 console.log(allPlayers);
 //outputs  all the 22 players
 /*Array(22) [ "Neuer", "Pavard", "Martinez", "Alaba", "Davies", "Kimmich", "Goretzka", "Coman", "Muller", "Gnarby", … ]*/
@@ -160,14 +160,14 @@ console.log(allPlayers);
 //4. During the game, Bayern Munich (team 1) used 3 substitute players. So create a
 //new array ('players1Final') containing all the original team1 players plus
 //'Thiago', 'Coutinho' and 'Perisic'
-const players1Final = ['Thiago', 'countinho', 'perisic', ...game.players[0]];
+const players1Final = ['Thiago', 'countinho', 'perisic', ...game.players[0]]; //or ['Thiago', 'countinho', 'perisic', ...game.players1]
 console.log(players1Final);
 //outputs the 11 players plus the 3 substitiue players  it becomes 14
 /*Array(14) [ "Thiago", "countinho", "perisic", "Neuer", "Pavard", "Martinez", "Alaba", "Davies", "Kimmich", "Goretzka", … ]*/
 
 //5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
 
-const { team1: fstTeam, x: draw1, team2: sndTeam } = game.odds;
+const { team1: fstTeam, x: draw1, team2: sndTeam } = game.odds; //or  const { odds:{team1, x: draw1, team2 } }= game;  console.log(team1, draw1, team2);
 console.log(fstTeam, draw1, sndTeam); // outputs 1.33 3.25 6.5
 
 //6. Write a function ('printGoals') that receives an arbitrary number of player
