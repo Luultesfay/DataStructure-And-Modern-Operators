@@ -304,7 +304,7 @@ for (const [key, { open, close }] of entries) {
   //for(const [key ,value] of entries)  but we know value is  an object so we can destrucure it to  {open,close}
   console.log(`on ${key} we open at ${open} and close at ${close}`);
 
-  // in this eg we destructured  x to [key,value] and the to [key,{open ,close}]
+  // in this eg we destructured  x to [key,value] and then to [key,{open ,close}]
   /* outputs
     on thu we open at 12 and close at 22 
     on fri we open at 11 and close at 23 
