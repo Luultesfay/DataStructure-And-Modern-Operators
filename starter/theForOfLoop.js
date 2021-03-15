@@ -310,3 +310,50 @@ for (const [key, { open, close }] of entries) {
     on fri we open at 11 and close at 23 
     on sat we open at 0 and close at 24*/
 }
+
+////coding challenge #2
+//Let's continue with our football betting app! Keep using the 'game' variable from before.
+
+// 1.Loop over the game.scored
+// array and print each player name to the console,
+//along with the goal number (Example: "Goal 1: Lewandowski")
+
+for (const [i, el] of game.scored.entries()) {
+  //const [scoring] of game.scored.entries() i refactor the scoring to [i,el]
+  // i stands for index and el for element
+  console.log(`Goal ${i + 1} : ${el}`);
+  /* 
+  Goal 1 : Lewandowski theForOfLoop.
+  Goal 2 : Gnarby theForOfLoop.
+  Goal 3 : Lewandowski theForOfLoop.
+  Goal 4 : Hummels*/
+}
+
+// 2. Use a loop to calculate the average odd and log it to the console (We already
+//  studied how to calculate averages, you can go check if you don't remember)
+
+const avgOdd = Object.values(game.odds);
+console.log(avgOdd);
+
+let totalScore = 0;
+for (const x of avgOdd) {
+  totalScore += x;
+}
+const avgOddScore = totalScore / 3; //3.69
+console.log(totalScore); //11.08
+console.log(avgOddScore); //3.69
+
+//3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+//Odd of victory Bayern Munich: 1.33
+//Odd of draw: 3.25
+//Odd of victory Borrussia Dortmund: 6.5 Get the team names directly from the game object, don't hardcode them
+//(except for "draw"). Hint: Note how the odds and the game objects have the same property names
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  // we use entries becouse we need to loop both the key and value means the whole object
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`odd of ${teamStr}  ${odd}`);
+}
+/*odd of victory Bayern Munich  1.33 
+odd of draw  3.25 
+odd of victory Borrussia Dortmund  6.5*/
