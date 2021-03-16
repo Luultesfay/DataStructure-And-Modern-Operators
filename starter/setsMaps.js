@@ -279,6 +279,6 @@ for (const [key, value] of gameEvents.entries()) {
   const evNts =
     key < 45
       ? `[FIRST HALF] ${key}: ${value}`
-      : `[SECOND HALF} ${key}:${value}`;
+      : `[SECOND HALF] ${key}:${value}`;
   console.log(evNts);
 }
