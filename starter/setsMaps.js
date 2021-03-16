@@ -67,8 +67,8 @@ for (const order of orderSet) {
   console.log(order);
 }
 /*outputs
-  Pasta setsMaps.
-  Pizza setsMaps.
+  Pasta 
+  Pizza 
   Garlic bread*/
 
 //the main use case of sets is actually to remove duplicate values of arrays.
@@ -234,3 +234,51 @@ Array [ false, "try again" ]*/
 
 console.log([...question.keys()]); //[ "question", 1, 2, 3, "correct", true, false ]  all the keys
 console.log([...question.values()]); //[ "what is the best programing language in the wold?", "C", "Java", "JavaScript", 3, "Correct", "try again" ] all the values
+
+/// coding challange 3
+/*Let's continue with our football betting app! This time, we have a map called
+'gameEvents' (see below) with a log of the events that happened during the
+game. The values are the events themselves, and the keys are the minutes in which
+each event happened (a football game has 90 minutes plus some extra time*/
+
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+//1. Create an array 'events' of the different game events that happened (no duplicates)
+
+const events = [...new Set(gameEvents.values())]; //we change it to set then the deplicate is omitted then we need to change again the Set to its Orginal array we simmply put in [... the set ]
+console.log(events);
+Array(4); //[ "⚽ GOAL", "🔁 Substitution", "🔶 Yellow card", "🔴 Red card" ]  but  if it were 'const events =new Set(gameEvents.values())'  then the output would be set
+
+//2. After the game has finished, is was found that the yellow card from minute 64 unfair. So remove this event from the game events log.
+
+gameEvents.delete(64);
+console.log(gameEvents); //now map removes the yellow card and becomes 10 in size
+
+//3. Compute and log the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+console.log(
+  `An event happened, on average, every ${92 / gameEvents.size} minutes`
+);
+
+//4. Loop over 'gameEvents' and log each element to the console, marking
+//whether it's in the first half or second half (after 45 min) of the game, like this:
+//[FIRST HALF] 17:⚽ GOAL
+
+for (const [key, value] of gameEvents.entries()) {
+  const evNts =
+    key < 45
+      ? `[FIRST HALF] ${key}: ${value}`
+      : `[SECOND HALF} ${key}:${value}`;
+  console.log(evNts);
+}
