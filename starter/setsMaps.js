@@ -165,3 +165,72 @@ rest.set(document.querySelector('h1'), 'Heading'); // the key is 'h1' and value 
 console.log(rest);
 /*Map(9) { name → "classico italianno", 2 → "madrid, Spain", catagories → (4) […], open → 11, close → 23, true → "we are open", false → "we are close", (2) […] → "test", h1→ "Heading" }
  */
+
+///// we  will see another way  of filling  the empty MAP instead of  using SET to fill it as we see in previous above codes
+
+/* in the last video we created an empty map and then edit elements to it by using the set method.
+Remember, however, there is actually another way of populating a new map without having to use the set method.
+And I prefer that because the set method is a bit cumbersome when there are a lot of values to set.*/
+
+const question = new Map([
+  ['question', 'what is the best programing language in the wold?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'try again'],
+]);
+console.log(question);
+
+//conver object to Map
+
+//lets take openingHour object from restaurant opject and conver it to map
+// an easy way to convert from objects to maps.
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap); //Map(3) { thu → {…}, fri → {…}, sat → {…} }
+
+/*
+-Next up, let's talk about iteration and iteration is possible
+on maps because as we already know, maps are also iterables.
+And so the for loop is also available for them.*/
+
+//quiz map
+// lets loop over the question map  only  with the  number as a 'key'  for this  [1, 'C'],[2, 'Java'],[3, 'JavaScript'],
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(` Answer ${key}:${value}`);
+}
+
+//const answer = Number(prompt('input you answer'));//this when user input number
+const answer = 3; //this when the input declared .no need to prompt and inter a number  and the answer is the same it doesn't  change
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer)); //  question.get('correct')= 3  then if our answer as input is 3 then     question.get('correct') === answer)=true then question.get(true)=Correct  now the answer is Correct
+
+//note if  we  put differnt number other than 3  then it print out  'trayagain'
+
+/// convert map to array
+/*sometimes we also need to convert a map backto an array.
+So basically to this structure,So convert map to array basically.
+You can do that by simply building new array and then unpacking again,
+using the spread operator.*/
+console.log([...question]); //maps converted array
+/*here is the changed output
+Array [ "question", "what is the best programing language in the wold?" ]
+ 
+Array [ 1, "C" ]
+ 
+Array [ 2, "Java" ]
+ 
+Array [ 3, "JavaScript" ]
+ 
+Array [ "correct", 3 ]
+ 
+Array [ true, "Correct" ]
+ 
+Array [ false, "try again" ]*/
+
+console.log([...question.keys()]); //[ "question", 1, 2, 3, "correct", true, false ]  all the keys
+console.log([...question.values()]); //[ "what is the best programing language in the wold?", "C", "Java", "JavaScript", 3, "Correct", "try again" ] all the values
