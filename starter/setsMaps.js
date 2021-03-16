@@ -91,3 +91,77 @@ console.log(
 //eg  how many latters is is in my name string  it means size  lets create set using my name
 
 console.log(new Set('luultesfay').size); //8    it print  8  while it was 10 becouse  sets only counts uniqe not deplicate
+
+//////////Maps
+//So, we learned about sets. Now, it's time to learn about the other new JavaScript data structure and that is maps
+// maps are a lot more useful than sets.
+/*
+a map is a data structure that we can use to map values to keys.
+So, just like an object data is stored in key value pairs in maps.
+-the difference between Maps and objects is that
+-maps the "KEY" of the map can be any type it could be number ,boolean, string  It could even be objects, or arrays, or other maps.etc
+-but with objects "key" only be a string  it can not be any type*/
+
+//lets create retaurant map  lets call it 'rest'
+
+const rest = new Map(); //we create map
+rest.set('name', 'classico italianno'); // we use "set"  to fill the map  first with 'key' second with 'value'
+rest.set(1, 'Rome, italy');
+console.log(rest.set(2, 'madrid, Spain')); //Map(3) { name → "classico italianno", 1 → "Rome, italy", 2 → "madrid, Spain" }
+
+//note: calling the set method like this does not only update the map that it's called on, but it also returns the map. like the above line of code  we set  madrid in location 2  but then it reurn us all the element of the map
+
+//eg lets add other staffs like catagories opening hours to the rest
+//here we chained  all sets to each other  it works very easly and great
+rest
+  .set('catagories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are close');
+/*Now, in order to read data from a map we use the Get method.
+And so, that get method is available on all the maps. */
+
+console.log(rest.get('name')); //classico italianno
+console.log(rest.get(true)); //we are open
+console.log(rest.get(1)); //Rome, italy
+
+//lets know if the restaurant is open or close  at specific timelets say 11
+
+const time = 11; //they are open
+//const time = 9;  we are close
+
+console.log(rest.get(time >= rest.get('open') && time < rest.get('close'))); //we are open
+//note: So, don't overuse this kind of pattern, okay? This just really goes to show the power of having Booleans as map keys.
+
+/*let's now keep exploring the methods that are available on maps.
+So, we already have methods to set and to get. Now, we can also check if a map contains a certain key.
+*/
+// lets see "has" metthod to check if the key is availavle in rest map
+
+console.log(rest.has('catagories')); // outputs 'true'     the rest has a key wthich is catagories
+
+//delet key
+rest.delete(1); // we delete the number one location from rest
+//rest.clear(); // Map(0)  remove all the data on the map
+//console.log(rest); // Rome italy is  deleted
+//console.log(rest.size); //7    rest.size give us size of the map
+
+///lets see objects and arrays seta as a  Map 'kEY'
+
+//rest.set([1, 2], 'test'); //we are set an array object as a key for a value 'test'
+//console.log(rest.get[(1, 2)]);//undefined becouse both 1 and 2 has refers to the same memory in the heap or these two refer to the same place in memory.
+
+// correct the above code lets say asign to variable  const arr=[1,2]
+const arr = [1, 2];
+rest.set(arr, 'test');
+console.log(rest.get(arr)); // outputs 'test'
+
+//lets use the  Dom element as key
+/*we will use document.queryselector. And then, we're gonna select
+these h1 elements that we have here. So, this is just an h1. So, nothing fancy.*/
+
+rest.set(document.querySelector('h1'), 'Heading'); // the key is 'h1' and value is 'Heading'
+console.log(rest);
+/*Map(9) { name → "classico italianno", 2 → "madrid, Spain", catagories → (4) […], open → 11, close → 23, true → "we are open", false → "we are close", (2) […] → "test", h1→ "Heading" }
+ */
