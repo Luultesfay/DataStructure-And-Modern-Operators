@@ -38,3 +38,82 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B'); //you got the middle seat'
 checkMiddleSeat('10C'); //you Got lacky
 checkMiddleSeat('11E'); //you got the middle seat'
+
+///// strings  PART 2
+
+//change to captal letter  and to small letter
+
+console.log(airline.toLowerCase()); //tap air portugal
+console.log(airline.toUpperCase()); //TAP AIR PORTUGAL
+console.log('TAP AIR PORTUGAL'.toLowerCase()); //tap air portugal        we can also change directly like this example
+
+//lets do practical eg  that a passenger give his name in correctly in its case and we need to fix it
+
+const passenger = 'joNAS'; //this is incorrect case to give your name to air line
+
+const passengerLower = passenger.toLowerCase();
+
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+
+console.log(passengerCorrect); //Jonas
+
+//eg comparing email
+
+const email = 'hello@jonas.io';
+const loginEmail = ' Hello@Jonas.Io \n'; // fix this to make exactly like the above email
+
+//const lowerEmail = loginEmail.toLowerCase();
+//const trimmedEmail = lowerEmail.trim(); // trim fixes all the white space  like ' ' empty space,  /n
+//console.log(trimmedEmail); //hello@jonas.io
+
+//we can also make it dry and simple  to the upper code
+
+const normalizedEmail = loginEmail.toLowerCase().trim(); //hello@jonas.io  gives as exactly the same as the obve code
+console.log(normalizedEmail); //hello@jonas.io  gives as exactly the same as the obve code
+
+console.log(email === normalizedEmail); //true
+
+//replacing part of the string
+
+const priceGB = '288,97£'; //this is british pound we need to replace the ',' and '£' to'.' '$' respectively
+
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS); //288.97$  it replaced
+
+const announcement =
+  'All passengers come to boording door 23 .Bording door 23 !';
+
+// we need to change 'door'  to 'gate'
+console.log(announcement.replaceAll('door', 'gate')); //All passengers come to boording gate 23 .Bording gate 23 !
+// note: replace()  it changes only the first accurance   like only the first door in the statement but  replaceAll() replaced all the accurances at once
+
+// methods that  returns booleans
+
+const planes = 'Airbus A320neo';
+
+console.log(planes.includes('A320')); //true    becouse A320 is included in the plane string
+console.log(planes.includes('Boeing')); //false  becouse it is not in the plane string
+console.log(planes.startsWith('Airb')); //true   becouse  it start  with 'Airb'
+console.log(planes.startsWith('irb')); // false  becouse it dosent statart with 'irb'
+
+//lets  do some  code   that if a plane is part of the airbus or not
+
+if (planes.startsWith('Airbus') && planes.endsWith('neo')) {
+  console.log('the plane is part of the Airbus family'); //the plane is part of the Airbus family
+}
+
+//practise excercise
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase(); // we first change all the passing argument to lowerCase letter and the we use if else statement
+  //we changed the to lower case becouse  we get the input from the passengers and they might give us different case latters so  to much with the if else statement we need to change it
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('you will not Allowed to Board!');
+  } else {
+    console.log('Wellcome  to Board');
+  }
+};
+checkBaggage('I have KniFe  and  camera in My baggage'); //you will not Allowed to Board!
+checkBaggage('I have only  soack and ppants in my pakage'); //Wellcome  to Board
+checkBaggage('i have gUn in my baggage'); //you will not Allowed to Board!
