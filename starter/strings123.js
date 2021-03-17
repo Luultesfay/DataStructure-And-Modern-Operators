@@ -117,3 +117,76 @@ const checkBaggage = function (items) {
 checkBaggage('I have KniFe  and  camera in My baggage'); //you will not Allowed to Board!
 checkBaggage('I have only  soack and ppants in my pakage'); //Wellcome  to Board
 checkBaggage('i have gUn in my baggage'); //you will not Allowed to Board!
+
+///strings  part 3
+//split and join
+//split method  Splits a string into substrings using the specified separator and return them as an array.
+console.log('a+very+nice+string'.split('+')); // [ "a", "very", "nice", "string" ]
+console.log('Jonas luul'.split(' ')); //Array [ "Jonas", "luul" ]
+
+const [firstName, Lastname] = 'Jonas luul'.split(' '); //we can destructure and store in array
+
+const newNames = ['Mr.', firstName, Lastname.toUpperCase()].join(' '); //join() method Adds all the elements of an array into a string, separated by the specified separator string.
+console.log(newNames); //Mr. Jonas LUUL
+
+//create a function that  accepts name and change the first word of the letter to capital
+
+const capitalName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    //namesUpper.push(n[0].toUpperCase() + n.slice(1));    first way
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // secound and esiest  way
+  }
+  console.log(namesUpper.join(' '));
+};
+capitalName('luul tesfay hagos'); //Luul Tesfay Hagos
+capitalName('hanna berhe gubsa'); //Hanna Berhe Gubsa
+capitalName('anna henok dave'); //Anna Henok Dave
+
+////padding
+//padding a string means to add a number of characters to the string until the string has a certain desired length.
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(20, '+')); //++++++Go to gate 23!
+console.log(message.padStart(20, '+').padEnd(30, '+')); //++++++Go to gate 23!++++++++++
+console.log('jonas'.padStart(20, '+').padEnd(30, '+')); //+++++++++++++++jonas++++++++++
+
+//real example  hides or mask the all digit of the credit card except the last 4 digit
+//when we mask all the first digits except the four last digit
+const maskCreditCard = function (number) {
+  const str = number + ''; //this change the number to string  becouse  number + "any string"='string'  becoumes automatically  changed to string
+  const lastNumbers = str.slice(-4); //; //this returns the lass 4 digit  '7899'    '6540'
+  return lastNumbers.padStart(str.length, '*'); // this '*' hide to the numbers  that was infront of the sliced numbers   '7899'    '6540'
+};
+
+console.log(maskCreditCard(234567899)); //*****7899
+console.log(maskCreditCard('45609876540')); //*******6540
+
+//when we mask the last 4  digits
+/*
+const maskCreditCard = function (number) {
+  const str = number + ''; //this change the number to string  becouse  number + "any string"='string'  becoumes automatically  changed to string
+  const firstNumbers = str.slice(4); //; //
+  return lastNumbers.padEnd(str.length, '*'); // this '*' hide to the numbers  that was inback of the sliced numbers   '7899'    '6540'
+};
+
+console.log(maskCreditCard(234567899)); //67899****
+console.log(maskCreditCard('45609876540')); //9876540****
+
+*/
+
+///  repeat()  method     it  uses to repeat a single message up to specified number or as needed
+
+const message2 = 'All flights is cancelled due to ...bad weather ....';
+console.log(message2.repeat(5));
+/*All flights is cancelled due to ...bad weather ....All flights is cancelled due to ...bad weather ....All flights is cancelled due to ...bad weather ....All flights is cancelled due to ...bad weather ....All flights is cancelled due to ...bad weather .... */
+
+const planeInLine = function (n) {
+  // n is number of planes
+  console.log(`there are ${n} number of planes${'🛫'.repeat(n)} in line`);
+};
+planeInLine(4);
+planeInLine(7);
+planeInLine(9);
