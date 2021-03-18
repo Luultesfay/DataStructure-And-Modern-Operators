@@ -136,8 +136,9 @@ const capitalName = function (name) {
   const namesUpper = [];
 
   for (const n of names) {
-    //namesUpper.push(n[0].toUpperCase() + n.slice(1));    first way
-    namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // secound and esiest  way
+    console.log(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n[0].toUpperCase() + n.slice(1)); // first way
+    //namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // secound and esiest  way
   }
   console.log(namesUpper.join(' '));
 };
@@ -190,3 +191,53 @@ const planeInLine = function (n) {
 planeInLine(4);
 planeInLine(7);
 planeInLine(9);
+
+//// coding challane#4
+
+/*Write a program that receives a list of variable names written in underscore_case
+and convert them to camelCase. 
+-The input will come from a textarea inserted into the DOM (see code below to
+insert the elements), and conversion will happen when the button is pressed.*/
+
+//document.body.append(document.createElement('textarea'));
+//document.body.append(document.createElement('button'));
+//const text = document.querySelector('textarea').value;
+/*
+const convertNaming = function (name) {
+  const nameLower = name.toLowerCase().split('_'); // [ "underscore", "case" ]
+  const finalCamel =
+    nameLower[1].charAt(0).toUpperCase() + nameLower[1].slice(1);
+
+  console.log(nameLower[0] + finalCamel);
+};
+
+convertNaming('underscore_case');
+convertNaming('first_name');
+convertNaming('Some_Variable');
+convertNaming('calculate_AGE');
+convertNaming('delayed_departure');
+*/
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+const text = document.querySelector('textarea').value;
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  //console.log(text);
+  const rows = text.split('\n');
+
+  for (const [index, row] of rows.entries()) {
+    const [firsts, lasts] = row.toLowerCase().trim().split('_');
+    const outputs = `${firsts}${lasts.replace(
+      lasts[0],
+      lasts[0].toUpperCase()
+    )}`;
+    console.log(`${outputs.padEnd(20)}${'☑️'.repeat(index + 1)}`);
+  }
+});
+/* underscore_case
+ Some_Variable
+calculate_AGE
+delayed_departure
+first_name*/
