@@ -3,7 +3,7 @@
 /*the AND operator and the OR operator, and how we can use them
 for something called short circuiting. So up until this point,
 we have used logical operators only to combine Boolean values.
-But the truth is that we can do a lot morewith the AND and OR operators.*/
+But the truth is that we can do a lot more with the AND and OR operators.*/
 
 //eg lets use non boolean values with the || operator
 
@@ -17,14 +17,15 @@ console.log(3 || 'luul'); //out puts 3 b/c three is truley value then it dosent 
 console.log('' || 'luul'); // luul
 console.log(true || 0); //true
 console.log(undefined || null); //null
+
 //So I can give you basically the general rule of how this operator works, no matter with how many values.
 
 console.log(undefined || 0 || 'hello' || 23 || null); //hello
 
 //note:there are three properties  about logical operators.
 /*-So first, they can use any data type. 
--They can return any data type
--and they do something called short circuiting,*/
+  -They can return any data type
+  -and they do something called short circuiting,*/
 
 /*And now let's see a more practical application of this. So let's say that there might be a property
 on the restaurant object with the number of guests. So something like this:
@@ -78,8 +79,8 @@ works with the idea or with the concept of nullish values instead of falsy value
 And nullish values are null and undefined.
 That's it. It does not include a zero or the empty string.*/
 
-//if restaurant.numGests = null ;  the obove code prints 10 not 0;
-//if restaurant.numGests = undefined ;  the obove code prints 10 not 0;
+//if restaurant.numGests = null ;  the obove code prints 10 not null;
+//if restaurant.numGests = undefined ;  the obove code prints 10 not undefined;
 
 //conding challange 1
 

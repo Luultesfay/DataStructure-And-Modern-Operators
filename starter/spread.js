@@ -115,10 +115,10 @@ console.log(NewRestaurant); //outputs all data of the old restaurant and the new
 
 // as we see in prvious lecture we can   shallow copy  using object spread  like when we use before Object.assign
 
-const restaurantCopy = { ...restaurant }; // shallow copies old restaurant  // this is better than using object.assign that we see it in previous leacture
+const restaurantCopy = { ...restaurant }; // shallow copies old restaurant  // this is better than using Object.assign that we see it in previous leacture
 restaurantCopy.name = 'restorante Roma'; //we change the name in the copied object
 console.log(restaurantCopy.name); //restorante Roma
-console.log(restaurant.name); //Classico Italiano
+console.log(restaurant.name); //Classico Italiano   //this indicate we did shallow copy
 
 ///////////  Rest Pattern and parameters
 /*

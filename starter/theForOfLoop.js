@@ -134,7 +134,7 @@ like we have always been doing, right?*/
 
 // but the new enhancement  that is  introduced after ES6 but  you can do it like it before its personal prference i show you this is the new way
 
-// orderPizza(mainIngradient, ...otherIngradent) {  we get read of the function and the semi colen
+// orderPizza(mainIngradient, ...otherIngradent) {  we get rid of the function and the semicolen
 //     // ...otherIngradent  this is rest syntax
 //     console.log(mainIngradient);
 //     console.log(otherIngradent);
@@ -169,7 +169,7 @@ const openingH = {
 console.log(openingH); //Object { mon: {…}, tues: {…}, "dayss-3": {…}
 
 //optional chaining. (?.)
-//an even newer feature of objects and also of arrayswhich is called optional chaining.
+//an even newer feature of objects and also of arrays which is called optional chaining.
 /*
 ES2020 introduced optional chaining. And with optional chaining,
 if a certain property does not exist, then 'undefined' is returned immediately.
@@ -213,7 +213,7 @@ console.log(
 const users = [{ name: 'luul', city: 'asmara', age: 78 }];
 console.log(users[0]?.name ?? 'no such name exists'); // output luul         if users at index 0 is exists(?.) then print name if not  print  'no such name exists'
 
-console.log(users[3]?.name ?? 'no such name exists'); // output  'no such name exists'         if users at index 0 is exists(?.) then print name if not  print  'no such name exists'
+console.log(users[2]?.name ?? 'no such name exists'); // output  'no such name exists'         if users at index 0 is exists(?.) then print name if not  print  'no such name exists'
 
 console.log(users[0]?.city ?? 'no city exists'); // output  'no such name exists'
 
@@ -227,7 +227,7 @@ depending on what exactly we want to loop over. So do we want to loop over the "
 over the "values " or both together.*/
 
 /*And let's start by simply looping over "property names".And so remember they are also called "keys".
-Now, ultimately we will still have to use the for of loop to loop over the array, but again,
+Now, ultimately we will still have to use the 'for of loop' to loop over the array, but again,
 we're going to do that in an indirect way. So we're not actually looping over the object itself.
 Instead, we're going to loop over, an array.*/
 
@@ -323,9 +323,9 @@ for (const [i, el] of game.scored.entries()) {
   // i stands for index and el for element
   console.log(`Goal ${i + 1} : ${el}`);
   /* 
-  Goal 1 : Lewandowski theForOfLoop.
-  Goal 2 : Gnarby theForOfLoop.
-  Goal 3 : Lewandowski theForOfLoop.
+  Goal 1 : Lewandowski 
+  Goal 2 : Gnarby 
+  Goal 3 : Lewandowski 
   Goal 4 : Hummels*/
 }
 

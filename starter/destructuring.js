@@ -179,7 +179,7 @@ console.log(menu, starters); //Array []  Array(4) [ "Focaccia", "Bruschetta", "G
 /*const { menu, starterMenu: starters } = restaurant;
 console.log(menu, starters); //outputs undefined Array(4) [ "Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad" ] */
 
-/* NOTE:keep in mind that this is especially helpful when we do not have or data hard-coded like we have it here.
+/* NOTE:keep in mind that this is specially helpful when we do not have or data hard-coded like we have it here.
 So this is just hard-coded data in our application.But in the real world,
 we usually get the data from somewhere else.And then we might not always know
 how exactly the data looks like. And so then it's useful to set defaults like this.*/
@@ -215,7 +215,7 @@ And these should contain the open and close hours for Friday.
 */
 // friday is inside -openingHours  object - inside restaurant object   ... so nested objects
 //So that's the object that we're gonna destructure.
-//S So again, we're gonna start with opening hours, and now we want to retrieve friday.
+// So again, we're gonna start with opening hours, and now we want to retrieve or destruct  friday.
 
 /*const { fri } = openingHours;
 console.log(fri);//Object { open: 11, close: 23 }*/
@@ -256,7 +256,7 @@ restaurant.orderDelivery({
   starterIndex: 2,
 });
 
-// for practice porpuse we will create   an object and we will create function with in that object
+// for practice purpose we will create   an object and we will create function with in that object
 
 // this will give us an output of city  with highest and lowest weather
 

@@ -136,7 +136,6 @@ const capitalName = function (name) {
   const namesUpper = [];
 
   for (const n of names) {
-    console.log(n[0].toUpperCase() + n.slice(1));
     namesUpper.push(n[0].toUpperCase() + n.slice(1)); // first way
     //namesUpper.push(n.replace(n[0], n[0].toUpperCase())); // secound and esiest  way
   }
@@ -241,3 +240,5 @@ btn.addEventListener('click', function () {
 calculate_AGE
 delayed_departure
 first_name*/
+
+//second practice

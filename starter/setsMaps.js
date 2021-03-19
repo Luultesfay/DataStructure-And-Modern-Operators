@@ -79,7 +79,8 @@ const staff = ['Waiter', 'chef', 'Waiter', 'chef', 'Manager', 'Waiter'];
 // so we need unique staff positions  like we dont need the positions that is deplucates so in this case lets pass it to the set
 /*But the conversion from a set to an array is pretty easy,because they're both iterables.So remember from earlier
 that the spread operator workson all iterables.  */
-const staffUnque = [...new Set(staff)]; //Array(3) [ "Waiter", "chef", "Manager" ] we use spread operator to convert the Set to array
+const staffUnque = [...new Set(staff)]; //Array(3) [ "Waiter", "chef", "Manager" ] we use spread operator to convert the Set to array     and  new Set(staff) is the set
+
 console.log(staffUnque); //Array(3)  [ "Waiter", "chef", "Manager" ]
 
 //if we only wanted to know how many different positions there are, then the size property
@@ -88,7 +89,7 @@ console.log(
   new Set(['Waiter', 'chef', 'Waiter', 'chef', 'Manager', 'Waiter']).size
 ); // out put 3
 
-//eg  how many latters is is in my name string  it means size  lets create set using my name
+//eg  how many latters is in my name string  it means size  lets create set using my name
 
 console.log(new Set('luultesfay').size); //8    it print  8  while it was 10 becouse  sets only counts uniqe not deplicate
 
@@ -139,7 +140,7 @@ So, we already have methods to set and to get. Now, we can also check if a map c
 */
 // lets see "has" metthod to check if the key is availavle in rest map
 
-console.log(rest.has('catagories')); // outputs 'true'     the rest has a key wthich is catagories
+console.log(rest.has('catagories')); // outputs 'true'     the rest has a key which is catagories
 
 //delet key
 rest.delete(1); // we delete the number one location from rest
@@ -147,12 +148,12 @@ rest.delete(1); // we delete the number one location from rest
 //console.log(rest); // Rome italy is  deleted
 //console.log(rest.size); //7    rest.size give us size of the map
 
-///lets see objects and arrays seta as a  Map 'kEY'
+///lets see objects and arrays sets as a  Map 'kEY'
 
 //rest.set([1, 2], 'test'); //we are set an array object as a key for a value 'test'
 //console.log(rest.get[(1, 2)]);//undefined becouse both 1 and 2 has refers to the same memory in the heap or these two refer to the same place in memory.
 
-// correct the above code lets say asign to variable  const arr=[1,2]
+// correct the above code lets say assign to variable  const arr=[1,2]
 const arr = [1, 2];
 rest.set(arr, 'test');
 console.log(rest.get(arr)); // outputs 'test'
@@ -183,7 +184,7 @@ const question = new Map([
 ]);
 console.log(question);
 
-//conver object to Map
+//convert object to Map
 
 //lets take openingHour object from restaurant opject and conver it to map
 // an easy way to convert from objects to maps.
@@ -209,7 +210,7 @@ console.log(answer);
 
 console.log(question.get(question.get('correct') === answer)); //  question.get('correct')= 3  then if our answer as input is 3 then     question.get('correct') === answer)=true then question.get(true)=Correct  now the answer is Correct
 
-//note if  we  put differnt number other than 3  then it print out  'trayagain'
+//note if  we  put differnt number other than 3  then it print out  'try again'
 
 /// convert map to array
 /*sometimes we also need to convert a map backto an array.
@@ -259,7 +260,7 @@ const gameEvents = new Map([
 
 const events = [...new Set(gameEvents.values())]; //we change it to set then the deplicate is omitted then we need to change again the Set to its Orginal array we simmply put in [... the set ]
 console.log(events);
-Array(4); //[ "⚽ GOAL", "🔁 Substitution", "🔶 Yellow card", "🔴 Red card" ]  but  if it were 'const events =new Set(gameEvents.values())'  then the output would be set
+//Array(4);[ "⚽ GOAL", "🔁 Substitution", "🔶 Yellow card", "🔴 Red card" ]  but  if it were 'const events =new Set(gameEvents.values())'  then the output would be set
 
 //2. After the game has finished, is was found that the yellow card from minute 64 unfair. So remove this event from the game events log.
 
@@ -271,7 +272,7 @@ console.log(
   `An event happened, on average, every ${92 / gameEvents.size} minutes`
 );
 
-//4. Loop over 'gameEvents' and log each element to the console, marking
+//4. Loop over 'gameEvents' and log each element to the console, making
 //whether it's in the first half or second half (after 45 min) of the game, like this:
 //[FIRST HALF] 17:⚽ GOAL
 
