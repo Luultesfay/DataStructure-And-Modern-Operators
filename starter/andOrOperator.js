@@ -59,7 +59,7 @@ if (restaurant.orderPizza) {
   restaurant.orderPizza('mashrooms', 'spinach'); //mashrooms ['spinach']      we get this out put becouse we use rest parameter in the restaurant object    orderPizza: function (mainIngradient, ...otherIngradent)
 }
 
-//we can make it very easy using AND(&&)short cercit  for the obove example
+//we can make it very easy using AND(&&)short cercuit  for the obove example
 
 // in this example if the first value is true(means if  orderPizza function exists in the restaurant object then its truthy value then it evaluates the second oprand after that AND(&&) cercuit then if that true it returns that operand  in this case its true)
 restaurant.orderPizza && restaurant.orderPizza('mashroom', 'spinach'); //mashrooms ['spinach']
@@ -67,8 +67,8 @@ restaurant.orderPizza && restaurant.orderPizza('mashroom', 'spinach'); //mashroo
 ////////// the nullish coalescing operator (??)
 //eg lets bring the last example we saw in or || operator . when we have 0 gest
 restaurant.numGests = 0;
-const gests3 = restaurant.numGests || 10;
-console.log(gests3); // it out puts 10  becouse 0 is falsey value and the operator checks the secound value 10 then turthy it returns that ten
+const guests3 = restaurant.numGests || 10; // note if we change with && we get correct answer
+console.log(guests3); // it out puts 10  becouse 0 is falsey value and the operator checks the secound value 10 then turthy it returns that ten
 
 // but the obove code returned us with  10 guests that we didnt want becouse we have 0 guests in our restaurant so nuulish operator (??) came to our rescue
 //nullish: null and undefined (not 0 or '')
@@ -170,8 +170,8 @@ console.log(players1Final);
 
 //5. Based on the game.odds object, create one variable for each odd (called 'team1', 'draw' and 'team2')
 
-const { team1: fstTeam, x: draw1, team2: sndTeam } = game.odds; //or  const { odds:{team1, x: draw1, team2 } }= game;  console.log(team1, draw1, team2);
-console.log(fstTeam, draw1, sndTeam); // outputs 1.33 3.25 6.5
+const { team1: fstTeam, x: draw, team2: sndTeam } = game.odds; //or  const { odds:{team1, x: draw, team2 } }= game;  console.log(team1, draw, team2);
+console.log(fstTeam, draw, sndTeam); // outputs 1.33 3.25 6.5
 
 //6. Write a function ('printGoals') that receives an arbitrary number of player
 //names (not an array) and prints each of them to the console, along with the

@@ -169,7 +169,7 @@ console.log(maskCreditCard('45609876540')); //*******6540
 const maskCreditCard = function (number) {
   const str = number + ''; //this change the number to string  becouse  number + "any string"='string'  becoumes automatically  changed to string
   const firstNumbers = str.slice(4); //; //
-  return lastNumbers.padEnd(str.length, '*'); // this '*' hide to the numbers  that was inback of the sliced numbers   '7899'    '6540'
+  return firstNumbers.padEnd(str.length, '*'); // this '*' hide to the numbers  that was inback of the sliced numbers   '7899'    '6540'
 };
 
 console.log(maskCreditCard(234567899)); //67899****

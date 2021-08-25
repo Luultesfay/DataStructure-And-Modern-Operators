@@ -61,7 +61,7 @@ You wouldn't use a set for that. And so again, there's no need for getting value
 because if you need it, then you will just use an array.
  */
 
-//Note that: sets are also iterables.And therefore, we can loop over them.  here we can use  for if loop
+//Note that: sets are also iterables.And therefore, we can loop over them.  here we can use  for of loop
 
 for (const order of orderSet) {
   console.log(order);
@@ -120,6 +120,7 @@ rest
   .set('close', 23)
   .set(true, 'we are open')
   .set(false, 'we are close');
+console.log(rest);
 /*Now, in order to read data from a map we use the Get method.
 And so, that get method is available on all the maps. */
 
@@ -213,7 +214,7 @@ console.log(question.get(question.get('correct') === answer)); //  question.get(
 //note if  we  put differnt number other than 3  then it print out  'try again'
 
 /// convert map to array
-/*sometimes we also need to convert a map backto an array.
+/*sometimes we also need  convert a map back to an array.
 So basically to this structure,So convert map to array basically.
 You can do that by simply building new array and then unpacking again,
 using the spread operator.*/

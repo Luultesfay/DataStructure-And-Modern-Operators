@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 //new way of looping over arrays,in ES6  "for-Of loop"
 //note: we dont need counters if else statements ES6 makes it so easy
 
@@ -215,7 +215,7 @@ console.log(users[0]?.name ?? 'no such name exists'); // output luul         if 
 
 console.log(users[2]?.name ?? 'no such name exists'); // output  'no such name exists'         if users at index 0 is exists(?.) then print name if not  print  'no such name exists'
 
-console.log(users[0]?.city ?? 'no city exists'); // output  'no such name exists'
+console.log(users[0]?.city ?? 'no city exists'); // output  asmara
 
 console.log(users[0]?.age ?? 'no age exists'); //78
 
@@ -254,7 +254,7 @@ for (const day of properties) {
   console.log(day); // so we get  thu fri sat    we loop over the property of the object indirect way  through the array
 }
 */
-// and also we can read the three days indivialy by adding this code lets upgrade it   but first lets cooment out the above code
+// and also we can read the three days indivialy by adding this code lets upgrade it   but first lets comment out the above code
 let openingStr = `we are open ${properties.length} days a week: `;
 for (const day of properties) {
   openingStr += `${day},`;

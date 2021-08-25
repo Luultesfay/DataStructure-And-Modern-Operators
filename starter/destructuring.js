@@ -117,6 +117,10 @@ const nested = [1, 2, [3, 4]]; //array inside array
 const [i, , [j, k]] = nested;
 console.log(i, j, k); //out puts 1,3,4
 
+//wt about if we want to destructure all indiviual element of the nested array
+//const [i, j, [k, l]] = nested;
+//console.log(i, j, k, l); //out puts 1,2,3,4
+
 //Default values
 
 //const [p, q, r] = [8, 9]; //we are diestructuring the element of the array and assined to variables of p,q,r  but we short one element unassgined which is r assgined to undefined
